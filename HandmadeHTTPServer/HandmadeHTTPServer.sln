@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleHttpServer", "SimpleHttpServer\SimpleHttpServer.csproj", "{E79A496C-AC98-4AAD-84BA-95372F531844}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleHttpServer.ConsoleApp", "HandmadeHTTPServerConsoleApp\SimpleHttpServer.ConsoleApp.csproj", "{ADC971FF-9997-4336-969B-D804F46CA1F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStore", "SharpStore\SharpStore.csproj", "{F4BDC662-975B-4F14-8842-E6C8A47231E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStore.Data", "HandmadeHTTPServer.Data\SharpStore.Data.csproj", "{C72F9D85-4247-4E54-BAC9-86B58EE60D9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStore.Models", "SimpleHttpServer.Models\SharpStore.Models.csproj", "{681A111D-365C-42AE-A581-8E5836405E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpStore.Services", "SharpStore.Services\SharpStore.Services.csproj", "{DBD315AB-FA94-4EB7-9841-7E0BEBFCAA6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E79A496C-AC98-4AAD-84BA-95372F531844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79A496C-AC98-4AAD-84BA-95372F531844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79A496C-AC98-4AAD-84BA-95372F531844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79A496C-AC98-4AAD-84BA-95372F531844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC971FF-9997-4336-969B-D804F46CA1F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC971FF-9997-4336-969B-D804F46CA1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC971FF-9997-4336-969B-D804F46CA1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC971FF-9997-4336-969B-D804F46CA1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4BDC662-975B-4F14-8842-E6C8A47231E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BDC662-975B-4F14-8842-E6C8A47231E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4BDC662-975B-4F14-8842-E6C8A47231E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4BDC662-975B-4F14-8842-E6C8A47231E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72F9D85-4247-4E54-BAC9-86B58EE60D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72F9D85-4247-4E54-BAC9-86B58EE60D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72F9D85-4247-4E54-BAC9-86B58EE60D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72F9D85-4247-4E54-BAC9-86B58EE60D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681A111D-365C-42AE-A581-8E5836405E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681A111D-365C-42AE-A581-8E5836405E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681A111D-365C-42AE-A581-8E5836405E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681A111D-365C-42AE-A581-8E5836405E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD315AB-FA94-4EB7-9841-7E0BEBFCAA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD315AB-FA94-4EB7-9841-7E0BEBFCAA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD315AB-FA94-4EB7-9841-7E0BEBFCAA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD315AB-FA94-4EB7-9841-7E0BEBFCAA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
