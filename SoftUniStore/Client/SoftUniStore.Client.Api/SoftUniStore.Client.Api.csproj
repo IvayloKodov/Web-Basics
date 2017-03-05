@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BBEE8DA-BE61-4809-9715-5AAC37869262}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoftUniStore.Client.Api</RootNamespace>
+    <AssemblyName>SoftUniStore.Client.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppStart.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\Contracts\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="DependencyContainer\Bindings.cs" />
+    <Compile Include="DependencyContainer\NinjectProvider.cs" />
+    <Compile Include="HtmlBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Router\RouteTable.cs" />
+    <Compile Include="Views\Catalog\AddGame.cs" />
+    <Compile Include="Views\Catalog\AllGames.cs" />
+    <Compile Include="Views\Catalog\EditGame.cs" />
+    <Compile Include="Views\Home\GameDetails.cs" />
+    <Compile Include="Views\Store\Login.cs" />
+    <Compile Include="Views\Store\Register.cs" />
+    <Compile Include="Views\Home\All.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\SoftUniStore.Data.Common\SoftUniStore.Data.Common.csproj">
+      <Project>{b3d8630d-c911-449b-aa7e-e1b6bba68ddb}</Project>
+      <Name>SoftUniStore.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\SoftUniStore.Data.Models\SoftUniStore.Data.Models.csproj">
+      <Project>{c83b7161-1d92-42a3-8466-fdd95151c906}</Project>
+      <Name>SoftUniStore.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\SoftUniStore.Data\SoftUniStore.Data.csproj">
+      <Project>{3bbfdc49-1767-4103-90ba-348c94a9386d}</Project>
+      <Name>SoftUniStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\SoftUniStore.Services\SoftUniStore.Services.csproj">
+      <Project>{514cbb3e-49cf-41b1-8adc-d3e672a24621}</Project>
+      <Name>SoftUniStore.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SimpleHttpServer\SimpleHttpServer.csproj">
+      <Project>{9E139539-C272-488A-BFCF-CADDF458DF9D}</Project>
+      <Name>SimpleHttpServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SimpleMVC\SimpleMVC.csproj">
+      <Project>{F2EF3059-AA6C-45C8-9DBB-9D36E62AF1B8}</Project>
+      <Name>SimpleMVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftUniStore.Client.Api.CommonModels\SoftUniStore.Client.Api.CommonModels.csproj">
+      <Project>{31615ac8-beb5-439b-9c0f-57c0b5c8dd2f}</Project>
+      <Name>SoftUniStore.Client.Api.CommonModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftUniStore.Client.Api.Common\SoftUniStore.Client.Api.Common.csproj">
+      <Project>{E3C1FDF9-FDC9-4F08-B4DD-A87A4D4603C0}</Project>
+      <Name>SoftUniStore.Client.Api.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="content\css\" />
+    <Folder Include="content\fonts\" />
+    <Folder Include="content\js\" />
+    <Folder Include="content\scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\add-game.html" />
+    <Content Include="content\admin-games.html" />
+    <Content Include="content\delete-game.html" />
+    <Content Include="content\edit-game.html" />
+    <Content Include="content\footer.html" />
+    <Content Include="content\game-details.html" />
+    <Content Include="content\header.html" />
+    <Content Include="content\home.html" />
+    <Content Include="content\login.html" />
+    <Content Include="content\nav-logged.html" />
+    <Content Include="content\nav-not-logged.html" />
+    <Content Include="content\register.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
