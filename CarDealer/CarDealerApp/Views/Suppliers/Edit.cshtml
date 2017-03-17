@@ -1,0 +1,74 @@
+﻿@using CarDealerApp.Infrastructure.Extensions
+@model CarDealer.Models.ViewModels.EditSupplierViewModel
+
+@{
+    ViewBag.Title = "Edit Supplier";
+}
+
+<h2>Edit Supplier</h2>
+
+
+@using (Html.BeginForm("Edit", "Suppliers", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsImporter, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IsImporter, new[]
+                {
+                    new SelectListItem { Text = "Yes", Value = "true" },
+                    new SelectListItem { Text = "No", Value = "false" },
+                }, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.Submit("Edit", "btn btn-primary")
+            </div>
+        </div>
+    </div>
+}
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Parts.First().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parts.First().Price)
+        </th>
+    </tr>
+
+    @foreach (var part in @Model.Parts)
+    {
+        <tr>
+            <td>
+                @Html.DisplayName(part.Name)
+            </td>
+            <td>
+                @Html.DisplayName(part.Price.ToString())
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

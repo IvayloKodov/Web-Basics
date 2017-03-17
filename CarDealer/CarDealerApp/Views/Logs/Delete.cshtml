@@ -1,0 +1,17 @@
+﻿@using CarDealerApp.Infrastructure.Extensions
+@model int
+@{
+    ViewBag.Title = "Delete confirmation";
+}
+
+<h2>Delete</h2>
+
+<p>Are you sure you want to delete it?</p>
+
+@using (Html.BeginForm("ConfirmDelete", "Logs", new { id = Model }, FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.ActionLink("Cancel", "All", null, new { @class = "btn btn-success" })
+        @Html.Submit("Delete", "btn btn-primary")
+    </div>
+}

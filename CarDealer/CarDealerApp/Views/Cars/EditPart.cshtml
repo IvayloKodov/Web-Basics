@@ -1,0 +1,46 @@
+﻿@model CarDealer.Models.ViewModels.Parts.EditCarPartViewModel
+
+@{
+    ViewBag.Title = "Edit Part";
+}
+
+<h2>Edit Part: @Model.Name</h2>
+
+
+    @using (Html.BeginForm("EditPart", "Cars", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CarId)
+            @Html.HiddenFor(model => model.PartId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @Html.Partial("_SubmitButton", "EDIT")
+
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Parts", new { id = Model.CarId })
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container-fluid">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="myCarousel" data-to-slide="0" class="active"></li>
+            <li data-target="myCarousel" data-to-slide="1"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="https://www.enterprise.com/content/dam/global-vehicle-images/cars/FORD_FOCU_2012-1.png" alt="car image">
+            </div>
+            <div class="item">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQLm2H-DTQ3VJzz-1JTO0c-bjcjVQ6yNQC_WBV77LEu_ji_ZLke" alt="car image">
+            </div>
+        </div>
+    </div>
+</div>
+
+@section style
+{
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+}

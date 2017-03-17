@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CarDealer.Models.ViewModels.SupplierViewModel>
+
+@{
+    ViewBag.Title = "Suppliers";
+}
+
+<h2>Suppliers</h2>
+
+<p>
+    @Html.ActionLink("New Supplier", "Add", "Suppliers", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsImporter)
+        </th>
+        <th>
+            @Html.DisplayName("Actions")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @(item.IsImporter ? "Yes" : "No")
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

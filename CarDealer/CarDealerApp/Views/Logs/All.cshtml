@@ -1,0 +1,67 @@
+﻿@using CarDealerApp.Infrastructure.Extensions
+@model IEnumerable<CarDealer.Models.ViewModels.LogsViewModel>
+
+@{
+    ViewBag.Title = "Logs";
+}
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-inline">
+                @using (Html.BeginForm("Search", "Logs", FormMethod.Get))
+                {
+                    @Html.TextBox("Username", null, new { @class = "form-control", placeholder = "Username..." })
+                    @Html.Submit("Search","btn btn-primary")
+                }
+            </div>
+        </div>
+
+        <div class="col-md-4 text-right">
+            @Html.ActionLink("Clear All Logs", "ClearAll", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+</div>
+
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Operation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedTable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+        <th>
+            @Html.DisplayName("Actions")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedTable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "Logs", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+</table>

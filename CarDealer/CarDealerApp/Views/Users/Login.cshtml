@@ -1,0 +1,23 @@
+﻿@using CarDealerApp.Infrastructure.Extensions
+@model CarDealer.Models.ViewModels.RegisterUserViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Username)
+    <input type="text" id="username" name="username" placeholder="Enter a valid username..." class="form-control" />
+
+    @Html.LabelFor(m => m.Password)
+    <input type="password" id="password" name="password" placeholder="Enter password..." class="form-control" />
+
+    <br />
+    @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-danger" })
+    <span> </span>
+    @Html.Submit("Login", "btn btn-primary")
+}

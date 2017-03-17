@@ -1,0 +1,33 @@
+﻿@model CarDealer.Models.ViewModels.Sales.TotalSaleCustomerViewModel
+
+@{
+    ViewBag.Title = "Customer total sales";
+}
+
+<h2>All customer sales</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            <p>Bought cars count</p>
+        </th>
+        <th>
+            <p>Spent money</p>
+        </th>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayFor(model => model.Name)</td>
+
+        <td>@Html.DisplayFor(model => model.BougthCarsCount)</td>
+
+        <td>@Html.DisplayFor(model => model.TotalSpentMoney)</td>
+    </tr>
+
+</table>
